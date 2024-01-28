@@ -59,11 +59,11 @@ col2.metric('Quantidade de vendas no período',
             quantidade_vendas,
             int(dif_metrica))
 
-principal_filial = df_vendas_corte['filial'].value_counts().index[0]
+principal_filial = df_vendas_corte['filial'].value_counts().index[0] if not df_vendas_corte.empty else "N/A"
 col3.metric('Principal Filial',
             principal_filial)
 
-principal_vendedor = df_vendas_corte['vendedor'].value_counts().index[0]
+principal_vendedor = df_vendas_corte['vendedor'].value_counts().index[0] if not df_vendas_corte['vendedor'].empty else "N/A"
 col4.metric('Principal Vendedor',
             principal_vendedor)
 
